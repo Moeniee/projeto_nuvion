@@ -14,7 +14,7 @@ resource "openstack_compute_instance_v2" "lab_vm" {
   name            = "lab-vm-tf"
   flavor_name     = "ST-1-0.5"
   key_pair        = openstack_compute_keypair_v2.lab_key.name
-  security_groups = ["default"]
+  security_groups = [openstack_networking_secgroup_v2.web.name]
 
   network {
     name = "Private"

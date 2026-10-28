@@ -4,3 +4,4 @@ variable "application_credential_secret" {
 }
 variable "os_auth_url" {}
 variable "os_region" {}
+variable "meu_ip_cidr" {}
