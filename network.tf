@@ -27,15 +27,10 @@ resource "openstack_networking_floatingip_v2" "fip" {
   pool = "public"
 }
 
-data "openstack_networking_port_v2" "vm_port" {
-  device_id  = openstack_compute_instance_v2.lab_vm.id
-  network_id = openstack_compute_instance_v2.lab_vm.network[0].uuid
-}
-
 resource "openstack_networking_floatingip_associate_v2" "fip_assoc" {
   floating_ip = openstack_networking_floatingip_v2.fip.address
-  port_id     = data.openstack_networking_port_v2.vm_port.id
-  depends_on = [openstack_networking_router_interface_v2.lab_router_if]
+  port_id     = openstack_lb_loadbalancer_v2.lb.vip_port_id
+  depends_on  = [openstack_networking_router_interface_v2.lab_router_if]
 }
 
 data "openstack_networking_network_v2" "public" {
