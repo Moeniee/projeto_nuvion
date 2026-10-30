@@ -1,0 +1,11 @@
+#cloud-config
+package_update: true
+packages:
+  - nginx
+runcmd:
+  - |
+    cat > /var/www/html/index.html <<EOF
+    <h1>Provisionado com Terraform no Nuvion</h1>
+    <p>Servidor: $(hostname)</p>
+    EOF
+  - systemctl enable --now nginx

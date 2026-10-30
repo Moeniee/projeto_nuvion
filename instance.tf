@@ -15,6 +15,7 @@ resource "openstack_compute_instance_v2" "lab_vm" {
   flavor_name     = "ST-1-0.5"
   key_pair        = openstack_compute_keypair_v2.lab_key.name
   security_groups = [openstack_networking_secgroup_v2.web.name]
+  user_data = file("${path.module}/cloud-init.yaml")
 
   network {
     name = "Private"
