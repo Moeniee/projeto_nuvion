@@ -115,9 +115,11 @@ Depois desliguei uma das VMs pelo painel. Em poucos segundos o health monitor a 
 
 ## Custo
 
-- 2CPUs R$ 276/mês
-- 4CPUs R$ 453/mês
-- 8CPUs R$ 772/mês
+- Operação total com o Nuvion: R$ 0.70
+- Instâncias Virtuais(VMs): R$ 0.33
+- Volume de armazenamento: R$ 0.04
+- Endereços IPv4 flutuantes: R$ 0.08
+- Load Balancers: R$ 0.21
 
 ## Próximos passos
 
