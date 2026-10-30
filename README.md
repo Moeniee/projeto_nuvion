@@ -105,7 +105,7 @@ Depois desliguei uma das VMs pelo painel. Em poucos segundos o health monitor a 
 - **IP flutuante sem roteador (`ExternalGatewayForFloatingIPNotFound`).** Sem um roteador ligando a rede privada à externa, o IP flutuante não pode ser associado. Solução: criar o roteador e a interface na sub-rede pelo Terraform.
 - **IP público no balanceador, não nas VMs.** O IP flutuante é associado à porta VIP do load balancer, e as VMs ficam sem IP público (acesso só pelo console do painel).
 - **Regras de encaminhamento.** A documentação lista HTTPS→HTTPS, HTTPS→HTTP, TCP→TCP e UDP→UDP, sem HTTP→HTTP. Usei TCP 80 com um health monitor HTTP em `/`.
-- **Segredos fora do Git.** `terraform.tfvars`, `*.tfstate` e `.terraform/` ficam no `.gitignore`. As credenciais foram geradas com data de expiração.
+- **Segredos fora do Git.** `terraform.tfvars`, `*.tfstate` e `.terraform/` ficam no `.gitignore`. As credenciais foram geradas com a data de expiração de 13 de novembro de 2026.
 
 ## Limitações
 
@@ -120,6 +120,7 @@ Depois desliguei uma das VMs pelo painel. Em poucos segundos o health monitor a 
 - Volume de armazenamento: R$ 0.04
 - Endereços IPv4 flutuantes: R$ 0.08
 - Load Balancers: R$ 0.21
+- Outros custos: R$ 0.04
 
 ## Próximos passos
 
